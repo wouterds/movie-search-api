@@ -2,7 +2,7 @@
 
 [![code-review](https://github.com/wouterds/movie-search-cdn-caching-example/workflows/code-review/badge.svg)](https://github.com/wouterds/movie-search-cdn-caching-example/actions/workflows/code-review.yml)
 
-This is a simple example project of how you can leverage Cloudflare's CDN caching to cache your API responses and reduce load on your application and upstream services.
+This is a simple example project of how you can leverage Cloudflare's CDN to cache your API responses and reduce load on your application and upstream services. Built using Node.js, TypeScript, Express and a few other libraries.
 
 ## Setup
 
