@@ -21,6 +21,15 @@ nvm install
 yarn
 ```
 
+### Environment
+
+```bash
+# copy example env
+cp .env.example .env
+```
+
+Adjust the environment variables to your needs.
+
 ## Linting
 
 ```bash
