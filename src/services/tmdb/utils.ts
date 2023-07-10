@@ -1,7 +1,8 @@
+import { Obfuscator } from '../obfuscator';
 import { TMDBMovie } from './types';
 
 export const normalizeMovie = (movie: TMDBMovie) => ({
-  id: movie.id,
+  id: Obfuscator.encode(movie.id),
   title: movie.title,
   poster: `/movies/images/${movie.poster_path}`.replace('//', '/'),
   wallpaper: `/movies/images/${movie.backdrop_path}`.replace('//', '/'),

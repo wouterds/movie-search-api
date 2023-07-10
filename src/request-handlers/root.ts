@@ -26,7 +26,7 @@ export const handleRootRequest = (_req: Request, res: Response) => {
       params: [
         {
           name: 'id',
-          type: 'number',
+          type: 'string',
           description: 'The id of the movie to return',
         },
       ],

@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
 
-import { TMDB } from '../../services';
+import { Obfuscator, TMDB } from '../../services';
 
 export const handleMovieRequest = async (req: Request, res: Response) => {
-  const id = parseInt(req.params.id, 10);
-  console.log(`/movies/${id}`);
+  console.log(`/movies/${req.params.id}`);
+  const id = Obfuscator.decode(req.params.id);
 
   if (!id) {
-    res.status(400).send({ data: null, error: 'missing id' });
+    res.status(400).send({ data: null, error: 'missing or invalid id' });
     return;
   }
 
