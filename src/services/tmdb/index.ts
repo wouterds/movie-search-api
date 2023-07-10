@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { API_ENDPOINT, API_KEY, IMAGE_ENDPOINT } from './config';
+import { TMDBMovie } from './types';
 import { normalizeMovie } from './utils';
 
 const TAG = '[services/tmdb]';
@@ -20,7 +21,9 @@ export const TMDB = {
         return [];
       }
 
-      const movies = response.data.results.map(normalizeMovie);
+      const movies = response.data.results
+        .filter((movie: TMDBMovie) => movie.poster_path)
+        .map(normalizeMovie);
 
       console.log(
         TAG,
