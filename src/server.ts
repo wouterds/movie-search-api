@@ -5,11 +5,16 @@ dotenv.config();
 
 import express from 'express';
 
-import { handlePingRequest, handleRootRequest } from './request-handlers';
+import {
+  handleMoviesRequest,
+  handlePingRequest,
+  handleRootRequest,
+} from './request-handlers';
 
 const app = express();
 app.get('/', handleRootRequest);
 app.get('/ping', handlePingRequest);
+app.get('/movies', handleMoviesRequest);
 
 app.listen(process.env.PORT, () => {
   console.log(
