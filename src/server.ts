@@ -16,12 +16,15 @@ import {
 } from './request-handlers';
 
 // custom morgan token to log the client ip with support for cloudflare ip
-morgan.token('ip', req => {
-  return (req.headers['cf-connecting-ip'] ||
-    req.headers['x-forwarded-for'] ||
-    req.socket.remoteAddress) as string;
-});
+morgan.token(
+  'ip',
+  req =>
+    (req.headers['cf-connecting-ip'] ||
+      req.headers['x-forwarded-for'] ||
+      req.socket.remoteAddress) as string,
+);
 
+// create app
 const app = express();
 
 // middlewares
@@ -35,6 +38,7 @@ app.get('/movies', handleMoviesRequest);
 app.get('/movies/:id', handleMovieRequest);
 app.get('/movies/images/:path', handleMovieImageRequest);
 
+// start app
 app.listen((process.env.PORT || 3000) as number, '0.0.0.0', () => {
   console.log(
     `Application running on port http://localhost:${process.env.PORT} 🚀`,
