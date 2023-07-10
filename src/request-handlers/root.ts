@@ -20,5 +20,16 @@ export const handleRootRequest = (_req: Request, res: Response) => {
         },
       ],
     },
+    {
+      path: '/movies/:id',
+      description: 'Returns a movie with the given id',
+      params: [
+        {
+          name: 'id',
+          type: 'number',
+          description: 'The id of the movie to return',
+        },
+      ],
+    },
   ]);
 };

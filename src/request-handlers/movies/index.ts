@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { TMDB } from '../services';
+import { TMDB } from '../../services';
 
 export const handleMoviesRequest = async (req: Request, res: Response) => {
   console.log(`/movies?q=${req.query.q}`);

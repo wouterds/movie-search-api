@@ -33,4 +33,32 @@ export const TMDB = {
       return [];
     }
   },
+
+  getMovie: async (id: number) => {
+    const start = Date.now();
+    console.log(TAG, `Getting movie with id ${id}`);
+
+    try {
+      const response = await axios.get(`${API_ENDPOINT}/movie/${id}`, {
+        params: { api_key: API_KEY },
+      });
+
+      if (response.status !== 200) {
+        console.error(TAG, `unexpected response, status: ${response.status}`);
+        return null;
+      }
+
+      const movie = normalizeMovie(response.data);
+
+      console.log(
+        TAG,
+        `Found movie "${movie.title}" in ${Date.now() - start}ms`,
+      );
+
+      return movie;
+    } catch (e) {
+      console.error(TAG, `${e}`);
+      return null;
+    }
+  },
 };
