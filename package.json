@@ -2,6 +2,7 @@
   "name": "movie-search-cdn-caching-example",
   "version": "0.1.0",
   "license": "MIT",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",
