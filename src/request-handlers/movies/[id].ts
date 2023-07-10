@@ -15,5 +15,8 @@ export const handleMovieRequest = async (req: Request, res: Response) => {
     return;
   }
 
+  // cache 5 minutes
+  res.setHeader('Cache-Control', 'public, max-age=300');
+
   res.send(movie);
 };
