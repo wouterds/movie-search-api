@@ -1,9 +1,9 @@
-# movie-search-cdn-caching-example
+# @wouterds/movie-search-api
 
-[![code-review](https://github.com/wouterds/movie-search-cdn-caching-example/workflows/code-review/badge.svg)](https://github.com/wouterds/movie-search-cdn-caching-example/actions/workflows/code-review.yml)
-[![release](https://github.com/wouterds/movie-search-cdn-caching-example/workflows/release/badge.svg)](https://github.com/wouterds/movie-search-cdn-caching-example/actions/workflows/release.yml)
-![docker image version](https://ghcr-badge.deta.dev/wouterds/movie-search-cdn-caching-example/latest_tag?label=latest)
-![docker image size](https://ghcr-badge.deta.dev/wouterds/movie-search-cdn-caching-example/size)
+[![code-review](https://github.com/wouterds/movie-search-api/workflows/code-review/badge.svg)](https://github.com/wouterds/movie-search-api/actions/workflows/code-review.yml)
+[![release](https://github.com/wouterds/movie-search-api/workflows/release/badge.svg)](https://github.com/wouterds/movie-search-api/actions/workflows/release.yml)
+![docker image version](https://ghcr-badge.deta.dev/wouterds/movie-search-api/latest_tag?label=latest)
+![docker image size](https://ghcr-badge.deta.dev/wouterds/movie-search-api/size)
 
 This is a simple example project to demonstrate how you can leverage Cloudflare's CDN to cache your API responses, reduce load on your application and upstream services.
 
@@ -35,7 +35,7 @@ Adjust the environment variables to your needs.
 
 The only thing you need to configure in Cloudflare is a Cache Rule to respect existing caching headers. That way when you set a Cache-Control header on your responses Cloudflare will cache the response on their CDN according to your instructions. This can be found in your Cloudflare dashboard under **Caching > Cache Rules**.
 
-![Screenshot 2023-07-10 at 14 29 39](https://github.com/wouterds/movie-search-cdn-caching-example/assets/1210628/95aea287-fbe9-46a9-b710-f3101fc74405)
+![Screenshot 2023-07-10 at 14 29 39](https://github.com/wouterds/movie-search-api/assets/1210628/95aea287-fbe9-46a9-b710-f3101fc74405)
 
 
 ## Linting

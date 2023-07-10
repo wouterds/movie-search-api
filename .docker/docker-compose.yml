@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   node:
-    image: ghcr.io/wouterds/movie-search-cdn-caching-example
+    image: ghcr.io/wouterds/movie-search-api
     restart: unless-stopped
     mem_limit: 64mb
     env_file:
