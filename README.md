@@ -35,3 +35,18 @@ yarn dev
 # compile source
 yarn build
 ```
+
+## Deployment
+
+An arm64v8 Docker image is built on tag & deployed automatically on a Raspberry Pi.
+
+```bash
+# bugfixes
+yarn patch
+
+# new (small) features
+yarn minor
+
+# new (big) release
+yarn major
+```
