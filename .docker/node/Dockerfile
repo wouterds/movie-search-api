@@ -25,5 +25,8 @@ COPY --from=dependencies /code/node_modules /code/node_modules
 COPY ./package.json ./package.json
 
 ENV TZ Europe/Brussels
+ENV PORT 3000
+
+EXPOSE $PORT
 
 CMD ["yarn", "start"]
