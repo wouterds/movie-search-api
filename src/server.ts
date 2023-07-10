@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 // load .env before loading anything else
 dotenv.config();
 
+import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
 
@@ -24,6 +25,7 @@ morgan.token('ip', req => {
 const app = express();
 
 // middlewares
+app.use(cors());
 app.use(morgan(':ip :method :url :status :response-time ms'));
 
 // endpoints
