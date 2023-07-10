@@ -3,5 +3,22 @@ import { Request, Response } from 'express';
 export const handleRootRequest = (_req: Request, res: Response) => {
   console.log('/');
 
-  res.send('hello world');
+  res.send([
+    {
+      path: '/ping',
+      description: 'Returns a pong with the current timestamp',
+      params: [],
+    },
+    {
+      path: '/movies',
+      description: 'Returns a list of movies matching the query',
+      params: [
+        {
+          name: 'q',
+          type: 'string',
+          description: 'The query to search for',
+        },
+      ],
+    },
+  ]);
 };
