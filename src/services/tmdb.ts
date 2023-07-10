@@ -3,7 +3,24 @@ import axios from 'axios';
 const TAG = '[services/tmdb]';
 
 const API_ENDPOINT = 'https://api.themoviedb.org/3';
+const IMAGE_ENDPOINT = 'https://image.tmdb.org/t/p/w500';
 const API_KEY = process.env.TMDB_API_KEY;
+
+type TMDBMovie = {
+  id: number;
+  title: string;
+  poster_path: string;
+  overview: string;
+  release_date: string;
+};
+
+const normalizeMovie = (movie: TMDBMovie) => ({
+  id: movie.id,
+  title: movie.title,
+  poster: `${IMAGE_ENDPOINT}${movie.poster_path}`,
+  description: movie.overview,
+  releaseDate: new Date(movie.release_date),
+});
 
 export const TMDB = {
   searchMovies: async (query: string) => {
@@ -23,7 +40,7 @@ export const TMDB = {
         return [];
       }
 
-      const movies = response.data.results;
+      const movies = response.data.results.map(normalizeMovie);
 
       console.log(
         TAG,
