@@ -1,6 +1,9 @@
 # movie-search-cdn-caching-example
 
 [![code-review](https://github.com/wouterds/movie-search-cdn-caching-example/workflows/code-review/badge.svg)](https://github.com/wouterds/movie-search-cdn-caching-example/actions/workflows/code-review.yml)
+[![release](https://github.com/wouterds/movie-search-cdn-caching-example/workflows/release/badge.svg)](https://github.com/wouterds/movie-search-cdn-caching-example/actions/workflows/release.yml)
+![docker image version](https://ghcr-badge.deta.dev/wouterds/movie-search-cdn-caching-example/latest_tag?label=latest)
+![docker image size](https://ghcr-badge.deta.dev/wouterds/movie-search-cdn-caching-example/size)
 
 This is a simple example project of how you can leverage Cloudflare's CDN to cache your API responses and reduce load on your application and upstream services. Built using Node.js, TypeScript, Express and a few other libraries.
 
