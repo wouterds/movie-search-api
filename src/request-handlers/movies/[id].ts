@@ -3,8 +3,6 @@ import { Request, Response } from 'express';
 import { Obfuscator, TMDB } from '../../services';
 
 export const handleMovieRequest = async (req: Request, res: Response) => {
-  console.log(`/movies/${req.params.id}`);
-
   const id = Obfuscator.decode(req.params.id);
   if (!id) {
     res.status(400).send({ error: 'missing or invalid id' });

@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import express from 'express';
+import morgan from 'morgan';
 
 import {
   handleMovieImageRequest,
@@ -13,7 +14,19 @@ import {
   handleRootRequest,
 } from './request-handlers';
 
+// custom morgan token to log the client ip with support for cloudflare ip
+morgan.token('ip', req => {
+  return (req.headers['cf-connecting-ip'] ||
+    req.headers['x-forwarded-for'] ||
+    req.socket.remoteAddress) as string;
+});
+
 const app = express();
+
+// middlewares
+app.use(morgan(':ip :method :url :status :response-time ms'));
+
+// endpoints
 app.get('/', handleRootRequest);
 app.get('/ping', handlePingRequest);
 app.get('/movies', handleMoviesRequest);
