@@ -7,3 +7,18 @@ services:
     mem_limit: 32mb
     env_file:
       - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.devcraftzingmovieapi.redirectscheme.scheme=https"
+      - "traefik.http.routers.devcraftzingmovieapi-http.rule=Host(`movie-api.craftzing.dev`)"
+      - "traefik.http.routers.devcraftzingmovieapi-http.entrypoints=web"
+      - "traefik.http.routers.devcraftzingmovieapi-http.middlewares=devcraftzingmovieapi"
+      - "traefik.http.routers.devcraftzingmovieapi.rule=Host(`movie-api.craftzing.dev`)"
+      - "traefik.http.routers.devcraftzingmovieapi.entrypoints=websecure"
+      - "traefik.http.routers.devcraftzingmovieapi.tls.certresolver=myhttpchallenge"
+    networks:
+      - reverse-proxy
+
+networks:
+  reverse-proxy:
+    external: true
