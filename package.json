@@ -8,6 +8,9 @@
     "lint:fix": "eslint ./src --ext .ts --fix",
     "lint:ts": "tsc --noEmit",
     "build": "tsc",
+    "patch": "npm version patch -m 'chore(release): v%s'",
+    "minor": "npm version minor -m 'chore(release): v%s'",
+    "major": "npm version major -m 'chore(release): v%s'",
     "start": "node dist/server.js"
   },
   "dependencies": {
