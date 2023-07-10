@@ -6,6 +6,7 @@ dotenv.config();
 import express from 'express';
 
 import {
+  handleMovieImageRequest,
   handleMovieRequest,
   handleMoviesRequest,
   handlePingRequest,
@@ -17,6 +18,7 @@ app.get('/', handleRootRequest);
 app.get('/ping', handlePingRequest);
 app.get('/movies', handleMoviesRequest);
 app.get('/movies/:id', handleMovieRequest);
+app.get('/movies/images/:path', handleMovieImageRequest);
 
 app.listen(process.env.PORT, () => {
   console.log(

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { API_ENDPOINT, API_KEY } from './config';
+import { API_ENDPOINT, API_KEY, IMAGE_ENDPOINT } from './config';
 import { normalizeMovie } from './utils';
 
 const TAG = '[services/tmdb]';
@@ -60,5 +60,9 @@ export const TMDB = {
       console.error(TAG, `${e}`);
       return null;
     }
+  },
+
+  getImageURL: (path: string) => {
+    return `${IMAGE_ENDPOINT}/${path}`;
   },
 };

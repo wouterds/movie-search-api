@@ -31,5 +31,16 @@ export const handleRootRequest = (_req: Request, res: Response) => {
         },
       ],
     },
+    {
+      path: '/movies/images/:path',
+      description: 'Returns an image with the given path',
+      params: [
+        {
+          name: 'path',
+          type: 'string',
+          description: 'The path of the image to return',
+        },
+      ],
+    },
   ]);
 };
