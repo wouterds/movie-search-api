@@ -33,7 +33,7 @@ Adjust the environment variables to your needs.
 
 ### Cloudflare
 
-The only thing you need to configure in Cloudflare is a Cache Rule to respect existing caching headers. That way when you set a Cache-Control header on your responses Cloudflare will cache the response on their CDN according to your instructions. This can be found in your Cloudflare dashboarod under **Caching > Cache Rules**.
+The only thing you need to configure in Cloudflare is a Cache Rule to respect existing caching headers. That way when you set a Cache-Control header on your responses Cloudflare will cache the response on their CDN according to your instructions. This can be found in your Cloudflare dashboard under **Caching > Cache Rules**.
 
 ![Screenshot 2023-07-10 at 14 29 39](https://github.com/wouterds/movie-search-cdn-caching-example/assets/1210628/95aea287-fbe9-46a9-b710-f3101fc74405)
 
