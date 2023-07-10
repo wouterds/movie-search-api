@@ -6,7 +6,8 @@
     "dev": "nodemon",
     "build": "tsc",
     "lint": "eslint ./src --ext .ts",
-    "lint:fix": "eslint ./src --ext .ts --fix"
+    "lint:fix": "eslint ./src --ext .ts --fix",
+    "lint:ts": "tsc --noEmit"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
