@@ -9,13 +9,13 @@ services:
       - .env
     labels:
       - "traefik.enable=true"
-      - "traefik.http.middlewares.devcraftzingmovieapi.redirectscheme.scheme=https"
-      - "traefik.http.routers.devcraftzingmovieapi-http.rule=Host(`movie-api.craftzing.dev`)"
-      - "traefik.http.routers.devcraftzingmovieapi-http.entrypoints=web"
-      - "traefik.http.routers.devcraftzingmovieapi-http.middlewares=devcraftzingmovieapi"
-      - "traefik.http.routers.devcraftzingmovieapi.rule=Host(`movie-api.craftzing.dev`)"
-      - "traefik.http.routers.devcraftzingmovieapi.entrypoints=websecure"
-      - "traefik.http.routers.devcraftzingmovieapi.tls.certresolver=myhttpchallenge"
+      - "traefik.http.middlewares.devcraftzingmoviesearchapi.redirectscheme.scheme=https"
+      - "traefik.http.routers.devcraftzingmoviesearchapi-http.rule=Host(`movie-search-api.craftzing.dev`)"
+      - "traefik.http.routers.devcraftzingmoviesearchapi-http.entrypoints=web"
+      - "traefik.http.routers.devcraftzingmoviesearchapi-http.middlewares=devcraftzingmoviesearchapi"
+      - "traefik.http.routers.devcraftzingmoviesearchapi.rule=Host(`movie-search-api.craftzing.dev`)"
+      - "traefik.http.routers.devcraftzingmoviesearchapi.entrypoints=websecure"
+      - "traefik.http.routers.devcraftzingmoviesearchapi.tls.certresolver=myhttpchallenge"
     networks:
       - reverse-proxy
 
