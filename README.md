@@ -5,7 +5,9 @@
 ![docker image version](https://ghcr-badge.deta.dev/wouterds/movie-search-cdn-caching-example/latest_tag?label=latest)
 ![docker image size](https://ghcr-badge.deta.dev/wouterds/movie-search-cdn-caching-example/size)
 
-This is a simple example project of how you can leverage Cloudflare's CDN to cache your API responses and reduce load on your application and upstream services. Built using Node.js, TypeScript, Express and a few other libraries.
+This is a simple example project to demonstrate how you can leverage Cloudflare's CDN to cache your API responses, reduce load on your application and upstream services.
+
+\- built using Docker, Node.js, TypeScript, Express and a few other libraries
 
 ## Setup
 
