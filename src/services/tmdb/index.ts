@@ -12,7 +12,7 @@ export const TMDB = {
 
     try {
       const response = await axios.get(`${API_ENDPOINT}/search/movie`, {
-        params: { api_key: API_KEY, query },
+        params: { api_key: API_KEY, query, language: 'en-US' },
       });
 
       if (response.status !== 200) {
