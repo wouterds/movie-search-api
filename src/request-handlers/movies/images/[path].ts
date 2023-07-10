@@ -8,13 +8,11 @@ export const handleMovieImageRequest = async (req: Request, res: Response) => {
   console.log(`/movies/images/${path}`);
 
   if (!path) {
-    res.status(400).send({ data: null, error: 'missing path' });
+    res.status(400).send({ error: 'missing path' });
     return;
   }
 
-  const imageUrl = TMDB.getImageURL(path);
-
-  const response = await axios.get(imageUrl, {
+  const response = await axios.get(TMDB.getImageURL(path), {
     responseType: 'stream',
   });
 
