@@ -48,7 +48,5 @@ app.get('*', handleCatchAllRequest);
 
 // start app
 app.listen((process.env.PORT || 3000) as number, '0.0.0.0', () => {
-  console.log(
-    `Application running on port http://localhost:${process.env.PORT} 🚀`,
-  );
+  console.log(`Application listening on http://0.0.0.0:${process.env.PORT} 🚀`);
 });
