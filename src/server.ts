@@ -29,7 +29,12 @@ morgan.token(
 const app = express();
 
 // middlewares
-app.use(cors({ origin: '*', allowedHeaders: '*' }));
+app.use(
+  cors({
+    origin: '*',
+    allowedHeaders: 'Content-Type,Cache-Control,Cf-Cache-Status',
+  }),
+);
 app.use(morgan(':ip :method :url :status :response-time ms'));
 
 // endpoints
