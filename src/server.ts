@@ -8,6 +8,7 @@ import express from 'express';
 import morgan from 'morgan';
 
 import {
+  handleCatchAllRequest,
   handleMovieImageRequest,
   handleMovieRequest,
   handleMoviesRequest,
@@ -37,6 +38,7 @@ app.get('/ping', handlePingRequest);
 app.get('/movies', handleMoviesRequest);
 app.get('/movies/:id', handleMovieRequest);
 app.get('/movies/images/:path', handleMovieImageRequest);
+app.get('*', handleCatchAllRequest);
 
 // start app
 app.listen((process.env.PORT || 3000) as number, '0.0.0.0', () => {
