@@ -32,7 +32,8 @@ const app = express();
 app.use(
   cors({
     origin: '*',
-    allowedHeaders: 'Content-Type,Cache-Control,Cf-Cache-Status',
+    allowedHeaders: ['Content-Type', 'Cache-Control', 'Cf-Cache-Status'],
+    exposedHeaders: ['Content-Type', 'Cache-Control', 'Cf-Cache-Status'],
   }),
 );
 app.use(morgan(':ip :method :url :status :response-time ms'));
