@@ -1,9 +1,6 @@
 import { Request, Response } from 'express';
 
 export const handleRootRequest = (_req: Request, res: Response) => {
-  // cache 5 minutes
-  res.setHeader('Cache-Control', 'public, max-age=300');
-
   res.send([
     {
       path: '/ping',

@@ -14,8 +14,5 @@ export const handleMovieImageRequest = async (req: Request, res: Response) => {
     responseType: 'stream',
   });
 
-  // cache 1 day
-  res.setHeader('Cache-Control', 'public, max-age=86400');
-
   response.data.pipe(res);
 };
