@@ -11,5 +11,8 @@ export const handleMoviesRequest = async (req: Request, res: Response) => {
 
   const movies = await TMDB.searchMovies(query);
 
+  // cache 5 minutes
+  res.setHeader('Cache-Control', 'public, max-age=300');
+
   res.send(movies);
 };
